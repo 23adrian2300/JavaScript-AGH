@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin=""></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin=""></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>zad3b</title>
+</head>
+
+<body>
+    <div id="mainc"></div>
+
+    <script type="text/babel">
+        class MAIN extends React.Component {
+            render() {
+                return (
+                    <main>
+                        <GREENWORKER></GREENWORKER>
+                        <BLACKWORKER></BLACKWORKER>
+                        <GREENWORKER></GREENWORKER>
+                    </main>
+                );
+            }
+        }
+
+        class GREENWORKER extends React.Component {
+            constructor(props) {
+                super(props);
+                this.ID;
+                this.status = { counter: 0, doingsomething: false };
+                this.start = this.start.bind(this);
+                this.stop = this.stop.bind(this);
+            }
+
+            start() {
+                this.ID = setInterval(() => {
+                    this.setstatus({ counter: this.status.counter + 1 })
+                }, 1000);
+                this.setstatus({ doingsomething: true });
+            }
+
+            stop() {
+                clearInterval(this.ID);
+                this.setstatus({ doingsomething: false });
+            }
+
+            render() {
+                return (
+                    <div className="green">
+                        <label htmlFor="counter">Counter →</label>
+                        <output id="counter" style={{ fontSize: '4vh', color: 'red' }}>
+                            {this.status.counter}
+                        </output>
+                        <br />
+                        <button id="start" className="btn btn-primary"
+                            disabled={!!this.status.doingsomething}
+                            onClick={this.start}>
+                            Start
+                        </button>
+                        <button id="stop" className="btn btn-primary"
+                            disabled={!!this.status.doingsomething}
+                            onClick={this.stop}>
+                            Stop
+                        </button>
+                    </div>
+                );
+            }
+        };
+        class BLUEWORKER extends React.Component {
+            constructor(props) {
+                super(props);
+                this.INIT_VALUE = 50;
+                this.status = { iter: this.INIT_VALUE };
+                this.handleChange = this.handleChange.bind(this);
+                this.handleResponseWorker = this.handleResponseWorker.bind(this);
+                this.calculatePrimes = this.calculatePrimes.bind(this);
+
+                this.worker = new Worker('worker.js');
+                this.worker.onmessage = this.handleResponseWorker;
+            }
+
+            handleChange(e) {
+                this.setstatus({ iter: e.target.value });
+            }
+
+            handleResponseWorker = (res) => {
+                this.props.propagateResults(res.data);
+            }
+
+            calculatePrimes() {
+                this.worker.postMessage(this.status.iter);
+            }
+
+            render() {
+                return (
+                    <div className="blue">
+                        <label htmlFor="iterationsworker">No of iterations: </label>
+                        <input id="iterationsworker" type="text" value={this.INIT_VALUE} onChange={this.handleChange} />
+                        <button className="btn btn-primary" onClick={this.calculatePrimes}>Run calculations</button>
+                    </div>
+                );
+            }
+        };
+
+        class BLACKWORKER extends React.Component {
+            constructor(props) {
+                super(props);
+                this.status = { results: null };
+                this.result = this.result.bind(this);
+            }
+
+            result(results) {
+                this.setstatus({ results: results });
+            }
+
+            render() {
+                return (
+                    <div className="black">
+                        <YELLOWWORKER results={this.status.results}></YELLOWWORKER>
+                        <BLUEWORKER propagateResults={this.result}></BLUEWORKER>
+                    </div>
+                );
+            }
+        };
+
+        class YELLOWWORKER extends React.Component {
+            render() {
+                return (
+                    <div className="yellow">
+                        <label htmlFor="resultworker">Result:</label>
+                        <output id="resultworker">{this.props.results}</output>
+                    </div>
+                );
+            }
+        };
+
+        const box = document.getElementById('mainc');
+        const mainc = ReactDOM.createRoot(box);
+        mainc.render(<MAIN />);
+    </script>
+</body>
+
+</html>

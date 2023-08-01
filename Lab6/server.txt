@@ -1,0 +1,120 @@
+The server was started on port 8000
+To stop the server, press "CTRL + C"
+PS C:\Users\adria\OneDrive\Pulpit\Zestaw 6 - Adrian Żerebiec\cw6> node app1        
+The server was started on port 8000
+To stop the server, press "CTRL + C"
+GET / 304 340.389 ms - -
+---------------------------
+req.query = {}
+req.body  = {}
+name      = undefined
+The server sent a plain text document to the browser for the request below
+GET /submit 200 5.930 ms - 17
+---------------------------
+req.query = {}
+req.body  = {}
+name      = undefined
+The server sent an XML document to the browser for the request below
+POST /submit 200 3.149 ms - 27
+---------------------------
+req.query = {}
+req.body  = {}
+name      = undefined
+The server sent a plain text document to the browser for the request below
+POST /submit 200 4.626 ms - 17
+---------------------------
+req.query = {}
+req.body  = {}
+name      = undefined
+The server sent a JSON document to the browser for the request below
+GET /submit 200 2.325 ms - 31
+---------------------------
+req.query = {}
+req.body  = {}
+name      = undefined
+The server sent a JSON document to the browser for the request below
+POST /submit 200 2.405 ms - 31
+---------------------------
+req.query = {}
+req.body  = {}
+name      = undefined
+The server sent an XML document to the browser for the request below
+POST /submit 200 3.347 ms - 27
+---------------------------
+req.query = {}
+req.body  = {}
+name      = undefined
+The server sent a plain text document to the browser for the request below
+POST /submit 200 1.989 ms - 17
+---------------------------
+req.query = {}
+req.body  = {}
+name      = undefined
+The server sent a JSON document to the browser for the request below
+POST /submit 200 2.598 ms - 31
+---------------------------
+req.query = {}
+req.body  = {}
+name      = undefined
+The server sent an XML document to the browser for the request below
+GET /submit 200 2.182 ms - 27
+---------------------------
+req.query = {}
+req.body  = {}
+name      = undefined
+The server sent a plain text document to the browser for the request below
+GET /submit 200 1.750 ms - 17
+---------------------------
+req.query = {}
+req.body  = {}
+name      = undefined
+The server sent a JSON document to the browser for the request below
+GET /submit 200 2.010 ms - 31
+---------------------------
+req.query = {}
+req.body  = {}
+name      = undefined
+The server sent an XML document to the browser for the request below
+GET /submit 200 1.609 ms - 27
+---------------------------
+req.query = { name: 'Jane', '0a': '4' }
+req.body  = {}
+name      = Jane
+The server sent a plain text document to the browser for the request below
+GET /submit?name=Jane&0a=4 200 3.524 ms - 12
+---------------------------
+req.query = { name: 'Jane Doe Róża' }
+req.body  = {}
+name      = Jane Doe Róża
+The server sent a plain text document to the browser for the request below
+GET /submit?name=Jane%20Doe%20R%C3%B3%C5%BCa 200 2.289 ms - 23
+---------------------------
+req.query = { name: 'Jane Doe Róża' }
+req.body  = {}
+name      = Jane Doe Róża
+The server sent a JSON document to the browser for the request below
+GET /submit?name=Jane%20Doe%20R%C3%B3%C5%BCa 200 2.104 ms - 37
+---------------------------
+req.query = { name: 'Jane Doe Róża' }
+req.body  = {}
+name      = Jane Doe Róża
+The server sent an XML document to the browser for the request below
+GET /submit?name=Jane%20Doe%20R%C3%B3%C5%BCa 200 2.308 ms - 51
+---------------------------
+req.query = {}
+req.body  = [Object: null prototype] { "'name": "Jane Doe Róża'" }
+name      = undefined
+The server sent a plain text document to the browser for the request below
+POST /submit 200 19.682 ms - 17
+---------------------------
+req.query = {}
+req.body  = [Object: null prototype] { "'name": "Jane Doe Róża'" }
+name      = undefined
+The server sent a JSON document to the browser for the request below
+POST /submit 200 3.289 ms - 31
+---------------------------
+req.query = {}
+req.body  = [Object: null prototype] { "'name": "Jane Doe Róża'" }
+name      = undefined
+The server sent an XML document to the browser for the request below
+POST /submit 200 2.910 ms - 27

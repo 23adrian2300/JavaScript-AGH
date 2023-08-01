@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>
+        Bank Apollo
+    </title>
+</head>
+
+<body>
+    <div class="p">
+        <i class="fa fa-phone"></i>
+        Telefon <a href="#">+123456789</a>
+        </a>
+
+        <i class="bi bi-person-fill"></i>
+        Email <a href="#">email@.com</a>
+    </div>
+   <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <canvas id="canvas"></canvas>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown">Dropdown</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Link</a></li>
+                            <li><a class="dropdown-item" href="#">Another link</a></li>
+                            <li><a class="dropdown-item" href="#">A third link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div id='first' class="card"><img src="assets/bank.jpg" style="width:100%">
+                    <h1>Bank Apollo</h1>
+                    <p class="title">Lokalizacja</p>
+                    <p>ul. Lwowska 45</p>
+                    <p> Kraków 21-241</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card2">
+                    <img src="assets/biznes.jpg" style="width:100%">
+                    <h1>Klient biznesowy</h1>
+                    <p>Prowadzisz firmę?</p>
+                    <p><button>Załóż konto firmowe</button></p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <div class="card3">
+                    <img class="card-img-top" src="assets/special.jpg" width="600" height="280">
+                    <div class="card-body">
+                        <h5 class="card-title">Oferta specjalna</h5>
+                        <p class="card-text">Jeśli skonczyłeś Infromatykę na AGH-u to oferta dla Ciebie</p>
+                        <p><button>Przeczytaj więcej</button></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                <div class="card4"><img src="assets/skarbonka.jpg" height="220" style="width:100%">
+                    <h1>Lokata</h1>
+                    <p>Bardzo opłacalna oferta</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                <div class="card5"><img src="assets/money.jpg" style="width:100%">
+                    <h1>Kredyt</h1>
+                    <p class="title">Niski procent</p>
+                    <button>Sprawdź warunki już teraz</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar2 navbar-inverse fixed-bottom">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Bank Apollo</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Umieść tutaj treść elementu 'body' z zadania 1 -->
+    <!-- Put here the contents of the 'body' element from exercise 1 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+        <!-- <script>
+            "use strict"; // Nie wyłączaj trybu ścisłego    
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d');
+        
+            //figura 1 - dach
+            ctx.fillStyle = "#666666"; //kolor wypełnienia
+            ctx.beginPath(); //rozpoczęcie ścieżki rysowania
+            ctx.moveTo(5, 15); //początkowy punkt
+            ctx.lineTo(10, 10); //punkt 2
+            ctx.lineTo(25, 10); //punkt 3
+            ctx.lineTo(30, 15); //punkt 4
+            ctx.closePath(); //zamknięcie ścieżki
+            ctx.fill(); //wypełnienie
+        
+            //figura 2 - budynek
+            ctx.fillStyle = "#999999"; //kolor wypełnienia
+            ctx.fillRect(100, 50, 15, 20); //wymiary i pozycja
+        
+            //figura 3 - drzwi
+            ctx.fillStyle = "#cc6600"; //kolor wypełnienia
+            ctx.fillRect(150, 310, 5, 5); //wymiary i pozycja
+        
+            //figura 4 - okno
+            ctx.fillStyle = "#ffffff"; //kolor wypełnienia
+            ctx.fillRect(12, 17, 5, 5); //wymiary i pozycja
+            ctx.fillStyle = "#336699"; //kolor wypełnienia
+            ctx.fillRect(17, 22, 5, 5); //wymiary i pozycja
+        
+          </script>     -->
+</body>
+
+</html>

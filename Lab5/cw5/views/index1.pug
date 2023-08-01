@@ -1,0 +1,26 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        title Third Express application
+    body
+        main
+            h1 Third Express application
+            form(method='POST' action='/')
+                label(for='name') Give your name
+                input(name='name')
+                br
+                input(type='submit')
+                input(type='reset')
+            img(src = 'img/wwe.png' alt = 'wwe' width='200' height='200')
+            table
+                thead
+                    th First name
+                    th Last name
+                    th Faculty
+                each student in students
+                    tr
+                        td= student.fname
+                        td= student.lname
+                        td= student.faculty

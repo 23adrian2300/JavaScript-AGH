@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Page title</title>
+</head>
+
+<body>
+  <main>
+    <h1>Płótno</h1>
+    <canvas id="canvas" width="500" height="500" style="border:1px solid #000000;">
+      Wygląda na to, że twoja przeglądarka nie obsługuje elementu "canvas"
+    </canvas>
+  </main>
+  <script>
+    "use strict"; // Nie wyłączaj trybu ścisłego    
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+
+    //figura 1 - dach
+    ctx.fillStyle = "#666666"; //kolor wypełnienia
+    ctx.beginPath(); //rozpoczęcie ścieżki rysowania
+    ctx.moveTo(50, 150); //początkowy punkt
+    ctx.lineTo(100, 100); //punkt 2
+    ctx.lineTo(250, 100); //punkt 3
+    ctx.lineTo(300, 150); //punkt 4
+    ctx.closePath(); //zamknięcie ścieżki
+    ctx.fill(); //wypełnienie
+
+    //figura 2 - budynek
+    ctx.fillStyle = "#999999"; //kolor wypełnienia
+    ctx.fillRect(100, 150, 150, 200); //wymiary i pozycja
+
+    //figura 3 - drzwi
+    ctx.fillStyle = "#cc6600"; //kolor wypełnienia
+    ctx.fillRect(150, 300, 50, 50); //wymiary i pozycja
+
+    //figura 4 - okno
+    ctx.fillStyle = "#ffffff"; //kolor wypełnienia
+    ctx.fillRect(125, 175, 50, 50); //wymiary i pozycja
+    ctx.fillStyle = "#336699"; //kolor wypełnienia
+    ctx.fillRect(175, 225, 50, 50); //wymiary i pozycja
+
+  </script>
+</body>
+
+</html>

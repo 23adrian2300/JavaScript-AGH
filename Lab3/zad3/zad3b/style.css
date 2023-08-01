@@ -1,0 +1,26 @@
+.green,
+.black,
+.yellow,
+.blue {
+    padding: 1rem;
+    overflow-wrap: anywhere;
+}
+
+.green {
+    background-color: #00ff5e;
+}
+
+.black {
+    display: flex;
+    flex-direction: column;
+    background-color: #131212;
+    gap: 1rem;
+}
+
+.yellow {
+    background-color: #ffe600;
+}
+
+.blue {
+    background-color: #0007e0;
+}
