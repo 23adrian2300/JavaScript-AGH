@@ -1,0 +1,5 @@
+{"typ":"Wpłata","kwota":85,"rodzajKonta":"biznesowe","rodzajSubkonta":"oszczednosciowe"}
+{"typ":"Wypłata","kwota":85,"rodzajKonta":"osobiste","rodzajSubkonta":"oszczednosciowe"}
+{"typ":"Wpłata","kwota":85,"rodzajKonta":"osobiste","rodzajSubkonta":"oszczednosciowe"}
+{"typ":"Wpłata","kwota":85,"rodzajKonta":"osobiste","rodzajSubkonta":"rozliczeniowe"}
+{"typ":"Wpłata","kwota":231,"rodzajKonta":"biznesowe","rodzajSubkonta":"rozliczeniowe"}
